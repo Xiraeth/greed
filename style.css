@@ -1,0 +1,51 @@
+@font-face {
+  font-family: blackChan;
+  src: url("/fonts/BLKCHCRY.TTF");
+}
+
+@font-face {
+  font-family: cartaMagna;
+  src: url("/fonts/Carta_Magna-line-demo-FFP.ttf");
+}
+
+@font-face {
+  font-family: mont;
+  src: url("/fonts/Montserrat-VariableFont_wght.ttf");
+}
+
+:root {
+  font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: mont, sans-serif;
+}
+
+body {
+  background-image: url("/images/tavern_bg.webp");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 200vh;
+}
+
+.main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: blackChan;
+
+  color: white;
+  font-size: 8rem;
+}
+
+h3 {
+  color: white;
+  font-size: 2rem;
+}
