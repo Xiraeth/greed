@@ -27,6 +27,6 @@ assignNamesBtn.addEventListener("click", (e) => {
   //       warningMsg.style.display = "none";
   //     }, 2000);
   //   }
-    // smoothFadeOut(nicknamesForm, null, 500);
-  });
+  // smoothFadeOut(nicknamesForm, null, 500);
+  // });
 });
