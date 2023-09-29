@@ -5,7 +5,7 @@ const welcomeContainer = document.querySelector(".welcome");
 const welcomeMsg = document.querySelector(".welcome h1");
 const subMsg = document.querySelector(".welcome h3");
 const audioToggle = document.querySelector(".fa-volume-high");
-const form = document.querySelector(".options");
+const initialForm = document.querySelector(".options");
 let bgMusic;
 
 playBtn.addEventListener("click", (e) => {
@@ -26,7 +26,7 @@ playBtn.addEventListener("click", (e) => {
     document.body.insertAdjacentHTML("afterbegin", markup);
     bgMusic = document.querySelector("#background_music");
     bgMusic.volume = 0.3;
-    form.style.display = "flex";
+    initialForm.style.display = "flex";
   }, 500);
 });
 
@@ -37,4 +37,4 @@ audioToggle.addEventListener("click", (e) => {
   audioToggle.classList.toggle("fa-volume-xmark");
 });
 
-export default form;
+export default initialForm;

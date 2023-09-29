@@ -8,9 +8,11 @@
       src="https://kit.fontawesome.com/00de2a7224.js"
       crossorigin="anonymous"
     ></script>
-    <script src="/scripts/welcome.js" defer type="module"></script>
-    <script src="/scripts/gameLogic.js" defer type="module"></script>
+    <script src="./scripts/welcome.js" defer type="module"></script>
+    <script src="./scripts/gameLogic.js" defer type="module"></script>
+    <script src="./scripts/gameStartOptions.js" defer type="module"></script>
     <link rel="stylesheet" href="/styles/welcome.css" />
+    <link rel="stylesheet" href="/styles/gameStartOptions.css" />
   </head>
   <body>
     <!-- <audio id="background_music" autoplay loop>
@@ -25,6 +27,7 @@
       <h3>The game where your inner gambler comes to life</h3>
       <button class="start">I'm ready</button>
     </div>
+
     <form class="options">
       <label for="players"
         ><i class="fa-solid fa-users"></i> How many players will there be?
@@ -51,8 +54,40 @@
           value="3000"
           step="1000"
       /></label>
-
       <button type="submit" id="start-game">Start Game</button>
+    </form>
+
+    <form class="nicknames">
+      <label for="player--1-name"
+        ><i class="fa-solid fa-user"></i>
+        Enter player 1 name:
+        <input
+          type="text"
+          id="player--1-name"
+          name="player_1_name"
+          required
+          autocomplete="off"
+          minlength="1"
+          maxlength="16"
+      /></label>
+
+      <label for="player--1-name"
+        ><i class="fa-solid fa-user"></i>
+        Enter player 1 name:
+        <input
+          type="text"
+          id="player--1-name"
+          name="player_1_name"
+          required
+          autocomplete="off"
+          minlength="1"
+          maxlength="16"
+      /></label>
+
+      <button type="submit" id="assign-names">Assign names</button>
+      <span class="warning hidden"
+        >You can't leave an input field empty...</span
+      >
     </form>
   </body>
 </html>

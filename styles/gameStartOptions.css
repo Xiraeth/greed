@@ -1,0 +1,78 @@
+@import "./welcome.css";
+@import "./general.css";
+
+.options {
+  width: 100%;
+  height: 100vh;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.options i {
+  color: crimson;
+}
+
+.options label {
+  color: burlywood;
+  font-family: blackChan;
+  font-size: 4rem;
+  display: block;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.options input {
+  font-family: blackChan;
+  font-size: 2rem;
+  outline: none;
+  border: none;
+  color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  background-color: burlywood;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.nicknames {
+  width: 100%;
+  min-height: 100vh;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nicknames label {
+  color: burlywood;
+  font-family: blackChan;
+  font-size: 4rem;
+  display: block;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.nicknames i {
+  color: crimson;
+}
+
+.nicknames input {
+  font-family: blackChan;
+  font-size: 2rem;
+  outline: none;
+  border: none;
+  color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  background-color: burlywood;
+  vertical-align: middle;
+}
+
+.warning {
+  margin-top: 1rem;
+  font-family: blackChan;
+  color: rgb(82, 192, 255);
+  font-size: 2rem;
+}

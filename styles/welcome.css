@@ -1,17 +1,4 @@
-@font-face {
-  font-family: blackChan;
-  src: url("/fonts/BLKCHCRY.TTF");
-}
-
-@font-face {
-  font-family: cartaMagna;
-  src: url("/fonts/Carta_Magna-line-demo-FFP.ttf");
-}
-
-@font-face {
-  font-family: mont;
-  src: url("/fonts/Montserrat-VariableFont_wght.ttf");
-}
+@import "./general.css";
 
 :root {
   font-size: 16px;
@@ -45,7 +32,6 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
-  /* bottom: 100px; */
   z-index: 1;
 }
 
@@ -65,22 +51,6 @@ h3 {
   font-size: 2rem;
   font-style: italic;
   font-weight: 400;
-}
-
-.start {
-  font-family: cartaMagna;
-  font-style: italic;
-  margin-top: 50px;
-  background-color: burlywood;
-  font-size: 2rem;
-  padding: 1rem 3rem;
-  border-radius: 1rem;
-  outline: none;
-  cursor: pointer;
-}
-
-.start:hover {
-  background: rgb(206, 171, 124);
 }
 
 .fa-volume-high,
@@ -108,59 +78,4 @@ h3 {
 
 .fa-dice {
   font-size: 5rem;
-}
-
-.options {
-  width: 100%;
-  height: 70vh;
-  /* margin: auto; */
-  display: none;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.options i {
-  /* color: burlywood; */
-  color: crimson;
-}
-
-.options label {
-  color: burlywood;
-  font-family: blackChan;
-  font-size: 4rem;
-  display: block;
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.options input {
-  font-family: blackChan;
-  font-size: 2rem;
-  outline: none;
-  border: none;
-  color: black;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  background-color: burlywood;
-  text-align: center;
-  vertical-align: middle;
-}
-
-#start-game {
-  font-family: cartaMagna;
-  font-style: italic;
-  background-color: crimson;
-  color: white;
-  outline: none;
-  font-size: 2rem;
-  padding: 1rem 3rem;
-  border-radius: 1rem;
-  outline: none;
-  cursor: pointer;
-  display: block;
-}
-
-#start-game:hover {
-  background-color: rgb(194, 19, 54);
 }
