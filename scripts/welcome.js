@@ -1,28 +1,32 @@
 "use strict";
 
-const startBtn = document.querySelector(".start");
+const playBtn = document.querySelector(".welcome .start");
+const welcomeContainer = document.querySelector(".welcome");
 const welcomeMsg = document.querySelector(".welcome h1");
 const subMsg = document.querySelector(".welcome h3");
 const audioToggle = document.querySelector(".fa-volume-high");
+const form = document.querySelector(".options");
 let bgMusic;
 
-startBtn.addEventListener("click", (e) => {
+playBtn.addEventListener("click", (e) => {
   const markup = `
-  <audio id="background_music" autoplay loop controls class="hidden">
+  <audio id="background_music" autoplay loop >
    <source src="/audio/Tavern_Ambient_Music.mp3" type="audio/mpeg" />
   </audio>
   `;
   welcomeMsg.style.opacity = 0;
   subMsg.style.opacity = 0;
-  startBtn.style.opacity = 0;
+  playBtn.style.opacity = 0;
   audioToggle.style.opacity = 1;
   setTimeout(function () {
     welcomeMsg.classList.add("hidden");
     subMsg.classList.add("hidden");
-    startBtn.classList.add("hidden");
+    playBtn.classList.add("hidden");
+    welcomeContainer.style.display = "none";
     document.body.insertAdjacentHTML("afterbegin", markup);
     bgMusic = document.querySelector("#background_music");
     bgMusic.volume = 0.3;
+    form.style.display = "flex";
   }, 500);
 });
 

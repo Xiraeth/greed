@@ -4,24 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Greed</title>
-    <script src="script.js" defer></script>
     <script
       src="https://kit.fontawesome.com/00de2a7224.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="style.css" />
+    <script src="/scripts/welcome.js" defer></script>
+    <link rel="stylesheet" href="/styles/welcome.css" />
   </head>
   <body>
-    <!-- <audio id="background_music" autoplay loop controls>
+    <!-- <audio id="background_music" autoplay loop>
       <source src="/audio/Tavern_Ambient_Music.mp3" type="audio/mpeg" />
     </audio> -->
     <div class="audio_toggle">
       <i class="fa-solid fa-volume-high"></i>
     </div>
+
     <div class="welcome">
-      <h1>Welcome to Greed!</h1>
+      <h1>Greed <i class="fa-solid fa-dice"></i></h1>
       <h3>The game where your inner gambler comes to life</h3>
-      <button class="start">Play Game</button>
+      <button class="start">I'm ready</button>
     </div>
+    <form class="options">
+      <label for="players"
+        ><i class="fa-solid fa-users"></i> How many players will there be?
+        <input
+          type="number"
+          id="players"
+          name="number_of_players"
+          required
+          autocomplete="off"
+          min="2"
+          max="6"
+      /></label>
+
+      <label for="points"
+        ><i class="fa-solid fa-crown"></i> How many points to win the game?
+        <input
+          type="number"
+          id="points"
+          name="points_to_win"
+          required
+          autocomplete="off"
+          min="1000"
+          max="10000"
+          value="3000"
+          step="1000"
+      /></label>
+
+      <button type="submit" id="start-game">Start Game</button>
+    </form>
   </body>
 </html>
