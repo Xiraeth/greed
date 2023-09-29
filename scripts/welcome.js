@@ -36,3 +36,5 @@ audioToggle.addEventListener("click", (e) => {
   audioToggle.classList.toggle("fa-volume-high");
   audioToggle.classList.toggle("fa-volume-xmark");
 });
+
+export default form;
