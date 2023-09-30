@@ -15,7 +15,7 @@
 }
 
 body {
-  background-image: url("/images/tavern_bg.webp");
+  background-image: url("images/tavern_bg.webp");
   background-repeat: no-repeat;
   background-attachment: fixed;
   min-height: 100vh;
