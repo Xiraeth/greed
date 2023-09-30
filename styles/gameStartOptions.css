@@ -1,6 +1,3 @@
-@import "welcome.css";
-@import "general.css";
-
 .options {
   width: 100%;
   height: 100vh;
@@ -8,10 +5,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.options i {
-  color: crimson;
 }
 
 .options label {
@@ -23,6 +16,10 @@
   margin-bottom: 1rem;
 }
 
+.options label i {
+  color: crimson;
+}
+
 .options input {
   font-family: blackChan;
   font-size: 2rem;
@@ -32,8 +29,26 @@
   padding: 0.5rem 1rem;
   border-radius: 20px;
   background-color: burlywood;
-  text-align: center;
   vertical-align: middle;
+}
+
+#assign-names {
+  font-family: cartaMagna;
+  font-style: italic;
+  background-color: crimson;
+  color: white;
+  outline: none;
+  font-size: 2rem;
+  padding: 1rem 3rem;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  outline: none;
+  cursor: pointer;
+  display: block;
+}
+
+#assign-names:hover {
+  background-color: rgb(194, 19, 54);
 }
 
 .nicknames {
@@ -54,7 +69,7 @@
   margin-bottom: 1rem;
 }
 
-.nicknames i {
+.nicknames label i {
   color: crimson;
 }
 

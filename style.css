@@ -1,6 +1,20 @@
 @import "styles/welcome.css";
-@import "styles/general.css";
 @import "styles/gameStartOptions.css";
+
+@font-face {
+  font-family: blackChan;
+  src: url("/fonts/BLKCHCRY.TTF");
+}
+
+@font-face {
+  font-family: cartaMagna;
+  src: url("/fonts/Carta_Magna-line-demo-FFP.ttf");
+}
+
+@font-face {
+  font-family: mont;
+  src: url("/fonts/Montserrat-VariableFont_wght.ttf");
+}
 
 :root {
   font-size: 16px;

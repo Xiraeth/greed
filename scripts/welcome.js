@@ -13,7 +13,7 @@ let bgMusic;
 playBtn.addEventListener("click", (e) => {
   const markup = `
   <audio id="background_music" autoplay loop >
-   <source src="/audio/Tavern_Ambient_Music.mp3" type="audio/mpeg" />
+   <source src="audio/Tavern_Ambient_Music.mp3" type="audio/mpeg" />
   </audio>
   `;
   welcomeMsg.style.opacity = 0;
