@@ -7,26 +7,21 @@ const startGameBtn = document.querySelector("#start-game");
 const nicknamesForm = document.querySelector(".nicknames");
 const assignNamesBtn = document.querySelector("#assign-names");
 const nicknames = document.querySelectorAll(".nicknames input");
-const warningMsg = document.querySelector(".warning");
+const startWarningMsg = document.querySelector(".start-warning");
+const assignWarningMsg = document.querySelector(".assign-warning");
 
 startGameBtn.addEventListener("click", function (e) {
   e.preventDefault();
-  initialFormInputs.forEach((input) => {
-    if (input.value == "") return;
-    else smoothFadeOut(initialForm, nicknamesForm, 500);
-  });
+  if (initialFormInputs[0].value == "") {
+    startWarningMsg.style.opacity = "1";
+    setTimeout(function () {
+      startWarningMsg.style.opacity = "0";
+    }, 2000);
+  }
+  if (initialFormInputs[0].value == "") return;
+  smoothFadeOut(initialForm, nicknamesForm, 500);
 });
 
 assignNamesBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  // nicknames.forEach((name) => {
-  //   if (name.validity.valueMissing) {
-  //     console.log("bad");
-  //     warningMsg.style.display = "block";
-  //     setTimeout(function () {
-  //       warningMsg.style.display = "none";
-  //     }, 2000);
-  //   }
-  // smoothFadeOut(nicknamesForm, null, 500);
-  // });
 });

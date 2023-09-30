@@ -1,5 +1,5 @@
-@import "./welcome.css";
-@import "./general.css";
+@import "welcome.css";
+@import "general.css";
 
 .options {
   width: 100%;
@@ -70,8 +70,17 @@
   vertical-align: middle;
 }
 
-.warning {
+.start-warning {
   margin-top: 1rem;
+  opacity: 0;
+  font-family: blackChan;
+  color: rgb(82, 192, 255);
+  font-size: 2rem;
+}
+
+.assign-warning {
+  margin-top: 1rem;
+  opacity: 0;
   font-family: blackChan;
   color: rgb(82, 192, 255);
   font-size: 2rem;
