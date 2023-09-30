@@ -6,4 +6,12 @@ const smoothFadeOut = function (elDis, elAp = undefined, ms) {
   }, ms);
 };
 
-export { smoothFadeOut };
+const warningMsgFlash = function (msgElement, msg, duration) {
+  msgElement.textContent = msg;
+  msgElement.style.opacity = "1";
+  setTimeout(function () {
+    msgElement.style.opacity = "0";
+  }, duration * 4);
+};
+
+export { smoothFadeOut, warningMsgFlash };

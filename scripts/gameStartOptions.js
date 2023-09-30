@@ -1,6 +1,7 @@
 "use strict";
 import initialForm from "./welcome.js";
-import { smoothFadeOut } from "./helper.js";
+import { smoothFadeOut, warningMsgFlash } from "./helper.js";
+import { FADEOUT_TIME } from "./config.js";
 
 const initialFormInputs = document.querySelectorAll(".options input");
 const startGameBtn = document.querySelector("#start-game");
@@ -12,14 +13,22 @@ const assignWarningMsg = document.querySelector(".assign-warning");
 
 startGameBtn.addEventListener("click", function (e) {
   e.preventDefault();
-  if (initialFormInputs[0].value == "") {
-    startWarningMsg.style.opacity = "1";
-    setTimeout(function () {
-      startWarningMsg.style.opacity = "0";
-    }, 2000);
+  if (initialFormInputs[0].value == "" || initialFormInputs[1].value == "") {
+    const msg = `You can't leave an input field empty...`;
+    warningMsgFlash(startWarningMsg, msg, FADEOUT_TIME);
   }
-  if (initialFormInputs[0].value == "") return;
-  smoothFadeOut(initialForm, nicknamesForm, 500);
+  if (initialFormInputs[0].value == "" || initialFormInputs[1].value == "")
+    return;
+  else if (+initialFormInputs[1].value < 1000) {
+    const msg = `Win condition points have to be greater than or equal to 1000`;
+    warningMsgFlash(startWarningMsg, msg, FADEOUT_TIME);
+    return;
+  } else if (+initialFormInputs[1].value > 10000) {
+    const msg = `Win condition points have to be less than or equal to 10000`;
+    warningMsgFlash(startWarningMsg, msg, FADEOUT_TIME);
+    return;
+  }
+  smoothFadeOut(initialForm, nicknamesForm, FADEOUT_TIME);
 });
 
 assignNamesBtn.addEventListener("click", (e) => {
