@@ -64,7 +64,7 @@ button:hover {
   color: burlywood;
   font-family: blackChan;
   font-size: 4rem;
-  display: block;
+  /* display: block; */
   text-align: center;
   margin-bottom: 1rem;
 }

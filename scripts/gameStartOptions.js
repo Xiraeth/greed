@@ -40,20 +40,18 @@ startGameBtn.addEventListener("click", function (e) {
     return;
   }
   smoothFadeOut(initialForm, nicknamesForm, FADEOUT_TIME);
+  console.log(+numPlayers.value);
 
-  for (let i = 1; i < +numPlayers; i++) {
+  for (let i = 1; i <= +numPlayers.value; i++) {
     document
       .querySelector(`#player--${i}-name`)
       .closest("label")
       .classList.remove("hidden");
-
-    console.log(document.querySelector(`#player--${i}-name`));
   }
 });
 
 assignNamesBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  for (let i = 1; i < +numPlayers.value; i++) {}
 });
 
 // for (let i = 1; i <= +numPlayers; i++) {
