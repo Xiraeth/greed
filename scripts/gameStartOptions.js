@@ -11,6 +11,7 @@ const assignNamesBtn = document.querySelector("#assign-names");
 const nicknames = document.querySelectorAll(".nicknames input");
 const startWarningMsg = document.querySelector(".start-warning");
 const assignWarningMsg = document.querySelector(".assign-warning");
+const players = [];
 
 startGameBtn.addEventListener("click", function (e) {
   e.preventDefault();
@@ -30,17 +31,16 @@ startGameBtn.addEventListener("click", function (e) {
     return;
   }
   if (+numPlayers.value < 2) {
-    const msg = `Players must be at least 2 wtf`;
+    const msg = `You really gonna play by yourself?`;
     warningMsgFlash(startWarningMsg, msg, FADEOUT_TIME);
     return;
   }
-  if (+numPlayers.value > 6) {
-    const msg = `Players can't be more than 6 chill`;
+  if (+numPlayers.value > 4) {
+    const msg = `Players can't be more than 4 chill`;
     warningMsgFlash(startWarningMsg, msg, FADEOUT_TIME);
     return;
   }
   smoothFadeOut(initialForm, nicknamesForm, FADEOUT_TIME);
-  console.log(+numPlayers.value);
 
   for (let i = 1; i <= +numPlayers.value; i++) {
     document
@@ -52,6 +52,9 @@ startGameBtn.addEventListener("click", function (e) {
 
 assignNamesBtn.addEventListener("click", (e) => {
   e.preventDefault();
+  for (let i = 1; i <= +numPlayers.value; i++) {
+    console.log(document.querySelector(`#player--${i}-name`).value);
+  }
 });
 
 // for (let i = 1; i <= +numPlayers; i++) {
