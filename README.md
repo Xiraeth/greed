@@ -12,7 +12,7 @@ First turn: player rolls all five dice. Look for:
 ![image](https://github.com/Xiraeth/greed/assets/77112995/ae742c8c-ebd4-4368-a751-15c2d112fb3a)  
 Some special rolls are:  
 - Rolling 1-5 (1,2,3,4,5) or 2-6 awards the player 750 points.
-- Rolling 1-6 gives 1500 points.
+- Rolling 1-6 gives 1500 points.  
 After rolling once, the player may keep all or some of the dice that award points (1's, 5's or any of the combinations mentioned above).
 After the player decides which dice to keep, the dice are temporarily taken out of the game and the points are temporarily added to their score (the current score). The player then keep rolling the leftover dice, until one of two things happen:
 - If no point-giving dice are rolled, the player's current score is set to 0, their turn ends and it's on to the next player.
