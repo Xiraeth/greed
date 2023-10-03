@@ -11,6 +11,7 @@ const initialForm = document.querySelector(".options");
 let bgMusic;
 
 playBtn.addEventListener("click", (e) => {
+  document.body.style.backgroundImage = "url('images/tavern_bg.webp')";
   const markup = `
   <audio id="background_music" autoplay loop >
    <source src="audio/intro.mp3" type="audio/mpeg" />

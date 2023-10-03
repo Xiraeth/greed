@@ -72,7 +72,9 @@ startGameBtn.addEventListener("click", (e) => {
     }
   }
   smoothFadeOut(nicknamesForm, FADE_TIME);
-  // smoothFadeOut(arrowBackBtn, FADE_TIME);
+  smoothFadeOut(arrowBackBtn, FADE_TIME);
+
+  document.body.style.backgroundImage = "url('images/table.jpg')";
 });
 
 arrowBackBtn.addEventListener("click", () => {

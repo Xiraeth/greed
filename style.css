@@ -29,8 +29,10 @@
 }
 
 body {
-  background-image: url("images/tavern_bg.webp");
+  background-image: url("images/door.jpg");
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   min-height: 100vh;
+  transition: background-image 1s;
 }
