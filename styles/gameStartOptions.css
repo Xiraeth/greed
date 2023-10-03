@@ -52,7 +52,7 @@
   vertical-align: middle;
 }
 
-button {
+/* button {
   font-family: cartaMagna;
   font-style: italic;
   background-color: crimson;
@@ -69,7 +69,7 @@ button {
 
 button:hover {
   background-color: rgb(194, 19, 54);
-}
+} */
 
 .nicknames {
   width: 100%;

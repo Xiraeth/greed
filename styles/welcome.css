@@ -14,7 +14,7 @@
   z-index: 1;
 }
 
-h1 {
+.welcome h1 {
   font-family: blackChan;
   font-size: 8rem;
   color: crimson;
@@ -24,7 +24,7 @@ h1 {
   color: crimson;
 }
 
-h3 {
+.welcome h3 {
   font-family: blackChan;
   color: darksalmon;
   font-size: 2rem;
