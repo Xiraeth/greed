@@ -20,4 +20,34 @@ const warningMsgFlash = function (msgElement, msg, duration) {
   }, duration * 4);
 };
 
-export { smoothFadeOut, smoothFadeIn, warningMsgFlash };
+const createAudioElement = function (el = null, url) {
+  if (el) {
+    el.remove();
+  }
+
+  let newEl = `
+    <audio id="background_music" autoplay loop>
+      <source src="${url}" type="audio/mpeg" />
+    </audio>
+  `;
+  document.body.insertAdjacentHTML("afterbegin", newEl);
+  document.querySelector("#background_music").volume = 0.3;
+
+  // Function returns the audio element so we can assign it to a variable
+  return document.querySelector("#background_music");
+};
+
+const toggleMusic = function (audioEl, btn) {
+  if (audioEl.volume > 0) audioEl.volume = 0;
+  else audioEl.volume = 0.5;
+  btn.classList.toggle("fa-volume-high");
+  btn.classList.toggle("fa-volume-xmark");
+};
+
+export {
+  smoothFadeOut,
+  smoothFadeIn,
+  warningMsgFlash,
+  createAudioElement,
+  toggleMusic,
+};

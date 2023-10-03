@@ -1,43 +1,40 @@
 "use strict";
 
 import { FADE_TIME } from "./config.js";
+import { toggleMusic, createAudioElement } from "./helper.js";
 
 const playBtn = document.querySelector(".welcome .start");
 const welcomeContainer = document.querySelector(".welcome");
 const welcomeMsg = document.querySelector(".welcome h1");
 const subMsg = document.querySelector(".welcome h3");
-const audioToggle = document.querySelector(".fa-volume-high");
+const audioToggleBtn = document.querySelector(".fa-volume-high");
 const initialForm = document.querySelector(".options");
-let bgMusic;
+let audio;
 
 playBtn.addEventListener("click", (e) => {
+  // Change background image
   document.body.style.backgroundImage = "url('images/tavern_bg.webp')";
-  const markup = `
-  <audio id="background_music" autoplay loop >
-   <source src="audio/intro.mp3" type="audio/mpeg" />
-  </audio>
-  `;
+
+  audio = createAudioElement(audio, "audio/intro.mp3");
+
+  // Make first section of game options appear
   welcomeMsg.style.opacity = 0;
   subMsg.style.opacity = 0;
   playBtn.style.opacity = 0;
-  audioToggle.style.opacity = 1;
+  audioToggleBtn.style.opacity = 1;
   setTimeout(function () {
     welcomeMsg.classList.add("hidden");
     subMsg.classList.add("hidden");
     playBtn.classList.add("hidden");
     welcomeContainer.style.display = "none";
-    document.body.insertAdjacentHTML("afterbegin", markup);
-    bgMusic = document.querySelector("#background_music");
-    bgMusic.volume = 0.3;
     initialForm.style.display = "flex";
   }, FADE_TIME);
 });
 
-audioToggle.addEventListener("click", (e) => {
-  if (bgMusic.volume > 0) bgMusic.volume = 0;
-  else bgMusic.volume = 0.3;
-  audioToggle.classList.toggle("fa-volume-high");
-  audioToggle.classList.toggle("fa-volume-xmark");
-});
+audioToggleBtn.addEventListener("click", createToggleMusic);
 
-export default initialForm;
+function createToggleMusic() {
+  toggleMusic(audio, audioToggleBtn);
+}
+
+export { initialForm, createToggleMusic, audioToggleBtn, audio };

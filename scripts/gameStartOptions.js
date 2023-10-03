@@ -1,6 +1,17 @@
 "use strict";
-import initialForm from "./welcome.js";
-import { smoothFadeOut, smoothFadeIn, warningMsgFlash } from "./helper.js";
+import {
+  audioToggleBtn,
+  initialForm,
+  createToggleMusic,
+  audio,
+} from "./welcome.js";
+import {
+  smoothFadeOut,
+  smoothFadeIn,
+  warningMsgFlash,
+  createAudioElement,
+  toggleMusic,
+} from "./helper.js";
 import { FADE_TIME } from "./config.js";
 
 const initialFormInputs = document.querySelectorAll(".options input");
@@ -75,6 +86,15 @@ startGameBtn.addEventListener("click", (e) => {
   smoothFadeOut(arrowBackBtn, FADE_TIME);
 
   document.body.style.backgroundImage = "url('images/table.jpg')";
+
+  // Remove old event listener
+  audioToggleBtn.removeEventListener("click", createToggleMusic);
+
+  // Create new audio element and attach event listener to mute it
+  let newAudio = createAudioElement(audio, "audio/in-game.mp3");
+  audioToggleBtn.addEventListener("click", function () {
+    toggleMusic(newAudio, audioToggleBtn);
+  });
 });
 
 arrowBackBtn.addEventListener("click", () => {
