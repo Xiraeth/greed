@@ -1,6 +1,6 @@
 "use strict";
 
-import { FADEOUT_TIME } from "./config.js";
+import { FADE_TIME } from "./config.js";
 
 const playBtn = document.querySelector(".welcome .start");
 const welcomeContainer = document.querySelector(".welcome");
@@ -29,7 +29,7 @@ playBtn.addEventListener("click", (e) => {
     bgMusic = document.querySelector("#background_music");
     bgMusic.volume = 0.3;
     initialForm.style.display = "flex";
-  }, FADEOUT_TIME);
+  }, FADE_TIME);
 });
 
 audioToggle.addEventListener("click", (e) => {

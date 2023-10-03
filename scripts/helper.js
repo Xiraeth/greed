@@ -1,8 +1,14 @@
-const smoothFadeOut = function (elDis, elAp = undefined, ms) {
-  elDis.style.opacity = "0";
+const smoothFadeOut = function (el, ms) {
+  el.style.opacity = "0";
   setTimeout(function () {
-    elDis.style.display = "none";
-    if (elAp) elAp.style.display = "flex";
+    el.style.display = "none";
+  }, ms);
+};
+
+const smoothFadeIn = function (el, ms, displayMethod = undefined) {
+  el.style.opacity = "1";
+  setTimeout(function () {
+    el.style.display = displayMethod;
   }, ms);
 };
 
@@ -14,4 +20,4 @@ const warningMsgFlash = function (msgElement, msg, duration) {
   }, duration * 4);
 };
 
-export { smoothFadeOut, warningMsgFlash };
+export { smoothFadeOut, smoothFadeIn, warningMsgFlash };

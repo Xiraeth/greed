@@ -47,12 +47,12 @@ h3 {
 
 .fa-volume-high:hover,
 .fa-volume-xmark:hover {
-  color: rgb(173, 142, 101);
+  color: rgb(173, 143, 103);
 }
 
 .fa-volume-high:active,
 .fa-volume-xmark:active {
-  color: rgb(158, 128, 89);
+  color: rgb(146, 119, 84);
 }
 
 .fa-dice {
