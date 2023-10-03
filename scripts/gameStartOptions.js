@@ -15,43 +15,81 @@ import {
 import { FADE_TIME } from "./config.js";
 
 const initialFormInputs = document.querySelectorAll(".options input");
-let [numPlayers, winCon] = initialFormInputs;
 const nextBtn = document.querySelector("#next");
 const arrowBackBtn = document.querySelector(".fa-arrow-left");
 const nicknamesForm = document.querySelector(".nicknames");
 const nextWarningMsg = document.querySelector(".next-warning");
+const nextWarningMsg2 = document.querySelector(".next-warning-2");
 const startGameBtn = document.querySelector("#start-game");
 const startGameWarningMsg = document.querySelector(".start-warning");
 let players = [];
 let warningMsg = "";
+let [numPlayers, winCon] = initialFormInputs;
 
 nextBtn.addEventListener("click", function (e) {
   e.preventDefault();
 
   // Flash the appropriate warning message when an input is not valid
+  if (+numPlayers.value < 0 || +winCon.value < 0) {
+    warningMsg = `What on earth are you typing?`;
+    warningMsgFlash(nextWarningMsg, warningMsg, FADE_TIME);
+    return;
+  }
+  if (numPlayers.value == "" && winCon.value == "") {
+    warningMsg = `You can't leave BOTH input fields empty...`;
+    warningMsgFlash(nextWarningMsg, warningMsg, FADE_TIME);
+    return;
+  }
   if (numPlayers.value == "" || winCon.value == "") {
     warningMsg = `You can't leave an input field empty...`;
     warningMsgFlash(nextWarningMsg, warningMsg, FADE_TIME);
+    return;
   }
-  if (numPlayers.value == "" || winCon.value == "") return;
+  if (+winCon.value < 1000 && +numPlayers.value == 1) {
+    warningMsg = `Win condition points have to be greater than or equal to 1000`;
+    warningMsgFlash(nextWarningMsg, warningMsg, FADE_TIME);
+
+    warningMsg = `You really gonna play by yourself?`;
+    warningMsgFlash(nextWarningMsg2, warningMsg, FADE_TIME);
+    return;
+  } else if (+winCon.value < 1000 && +numPlayers.value > 4) {
+    warningMsg = `Win condition points have to be greater than or equal to 1000`;
+    warningMsgFlash(nextWarningMsg, warningMsg, FADE_TIME);
+
+    warningMsg = `Players can't be more than 4 chill`;
+    warningMsgFlash(nextWarningMsg2, warningMsg, FADE_TIME);
+    return;
+  } else if (+winCon.value > 10000 && +numPlayers.value == 1) {
+    warningMsg = `Win condition points have to be less than or equal to 10000`;
+    warningMsgFlash(nextWarningMsg, warningMsg, FADE_TIME);
+
+    warningMsg = `You really gonna play by yourself?`;
+    warningMsgFlash(nextWarningMsg2, warningMsg, FADE_TIME);
+    return;
+  } else if (+winCon.value > 10000 && +numPlayers.value > 4) {
+    warningMsg = `Win condition points have to be less than or equal to 10000`;
+    warningMsgFlash(nextWarningMsg, warningMsg, FADE_TIME);
+
+    warningMsg = `Players can't be more than 4 chill`;
+    warningMsgFlash(nextWarningMsg2, warningMsg, FADE_TIME);
+    return;
+  }
   if (+winCon.value < 1000) {
     warningMsg = `Win condition points have to be greater than or equal to 1000`;
     warningMsgFlash(nextWarningMsg, warningMsg, FADE_TIME);
     return;
-  }
-  if (+winCon.value > 10000) {
+  } else if (+winCon.value > 10000) {
     warningMsg = `Win condition points have to be less than or equal to 10000`;
     warningMsgFlash(nextWarningMsg, warningMsg, FADE_TIME);
     return;
   }
-  if (+numPlayers.value < 2) {
+  if (+numPlayers.value == 1) {
     warningMsg = `You really gonna play by yourself?`;
-    warningMsgFlash(nextWarningMsg, warningMsg, FADE_TIME);
+    warningMsgFlash(nextWarningMsg2, warningMsg, FADE_TIME);
     return;
-  }
-  if (+numPlayers.value > 4) {
+  } else if (+numPlayers.value > 4) {
     warningMsg = `Players can't be more than 4 chill`;
-    warningMsgFlash(nextWarningMsg, warningMsg, FADE_TIME);
+    warningMsgFlash(nextWarningMsg2, warningMsg, FADE_TIME);
     return;
   }
 
