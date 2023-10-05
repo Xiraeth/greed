@@ -21,11 +21,11 @@
 }
 
 .initiativeRollsContainer {
-  height: 400px;
+  height: 500px;
   width: 80%;
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: start;
 }
 
 .rollInitiativeBtn {
@@ -44,19 +44,23 @@
   background: rgb(196, 17, 53);
 }
 
+/* The container of the roll*/
 .initiativeRollsContainer > div {
   text-align: center;
   opacity: 0;
 }
 
+/* The names of the players in the container*/
 .initiativeRollsContainer > div > div {
   font-family: blackChan;
-  font-size: 3rem;
+  font-size: 5rem;
   text-align: center;
   color: burlywood;
 }
 
+/* The dice svg in the container */
 .initiativeRollsContainer > div > i {
   font-size: 10rem;
   color: burlywood;
+  margin-top: 2rem;
 }
