@@ -25,3 +25,7 @@ startGameBtn.addEventListener("click", (e) => {
     smoothFadeIn(roll, FADE_TIME, "block");
   }
 });
+
+rollInitiativeContainer.addEventListener("click", (e) => {
+  const btn = e.target.closest("button");
+});
