@@ -44,10 +44,13 @@ const toggleMusic = function (audioEl, btn) {
   btn.classList.toggle("fa-volume-xmark");
 };
 
+const createDiceRoll = () => Math.round(Math.random() * 6);
+
 export {
   smoothFadeOut,
   smoothFadeIn,
   warningMsgFlash,
   createAudioElement,
   toggleMusic,
+  createDiceRoll,
 };

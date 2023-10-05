@@ -1,7 +1,7 @@
 "use strict";
 
 import { numPlayers, winCon, players } from "./gameStartOptions.js";
-import { smoothFadeIn } from "./helper.js";
+import { smoothFadeIn, createDiceRoll } from "./helper.js";
 import { FADE_TIME } from "./config.js";
 
 const startGameBtn = document.querySelector("#start-game");
@@ -28,4 +28,8 @@ startGameBtn.addEventListener("click", (e) => {
 
 rollInitiativeContainer.addEventListener("click", (e) => {
   const btn = e.target.closest("button");
+  if (!btn) return;
+
+  const diceRoll = createDiceRoll();
+  console.log(btn);
 });
