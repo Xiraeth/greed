@@ -22,6 +22,7 @@ const nextWarningMsg = document.querySelector(".next-warning");
 const nextWarningMsg2 = document.querySelector(".next-warning-2");
 const startGameBtn = document.querySelector("#start-game");
 const startGameWarningMsg = document.querySelector(".start-warning");
+const rollInitiativeDiv = document.querySelector(".rollInitiative");
 let players = [];
 let warningMsg = "";
 let [numPlayers, winCon] = initialFormInputs;
@@ -133,6 +134,8 @@ startGameBtn.addEventListener("click", (e) => {
   audioToggleBtn.addEventListener("click", function () {
     toggleMusic(newAudio, audioToggleBtn);
   });
+
+  // smoothFadeIn(rollInitiativeDiv, FADE_TIME, "flex");
 });
 
 arrowBackBtn.addEventListener("click", () => {
@@ -155,3 +158,5 @@ arrowBackBtn.addEventListener("click", () => {
   players = [];
   warningMsg = "";
 });
+
+export { numPlayers, winCon, players };
