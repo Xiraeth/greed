@@ -6,7 +6,6 @@ import { FADE_TIME } from "./config.js";
 
 const startGameBtn = document.querySelector("#start-game");
 const rollInitiativeDiv = document.querySelector(".rollInitiative");
-const rollInitiativeButtons = document.querySelectorAll(".rollInitiativeBtn");
 const rollInitiativeContainer = document.querySelector(
   ".initiativeRollsContainer"
 );
@@ -31,16 +30,18 @@ startGameBtn.addEventListener("click", (e) => {
 });
 
 rollInitiativeContainer.addEventListener("click", (e) => {
+  // Guard clause
   const btn = e.target.closest("button");
   if (!btn) return;
 
+  const faSolid = btn.nextElementSibling;
   // "rolled" class is there to make sure each button is pressed only once
   // "count" is there so we can't keep rolling and adding classes to the <i> elements
-
-  const faSolid = btn.nextElementSibling;
   if (count < +numPlayers.value && !btn.classList.contains("rolled")) {
-    const diceRoll = createDiceRoll().rollString;
-    faSolid.classList.add(`fa-dice-${diceRoll}`);
+    const diceRoll = createDiceRoll();
+    const playerRolled = btn.classList[0].slice(-1);
+    players[playerRolled - 1].initiative = diceRoll.rollInt;
+    faSolid.classList.add(`fa-dice-${diceRoll.rollString}`);
     btn.classList.add("rolled");
     count++;
   }
