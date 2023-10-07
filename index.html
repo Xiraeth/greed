@@ -12,6 +12,7 @@
     <script src="scripts/gameLogic.js" defer type="module"></script>
     <script src="scripts/gameStartOptions.js" defer type="module"></script>
     <script src="scripts/rollInitiative.js" defer type="module"></script>
+    <script src="scripts/playGame.js" defer type="module"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -43,32 +44,33 @@
         <div class="hidden initiativeRoll--1">
           <div class="player--names player--name--1"></div>
           <button class="rollInitiativeBtn--1 rollInitiativeBtn">
-            Roll dice
+            Roll initiative
           </button>
           <div class="initiativeResult"></div>
         </div>
         <div class="hidden initiativeRoll--2">
           <div class="player--names player--name--2"></div>
           <button class="rollInitiativeBtn--2 rollInitiativeBtn">
-            Roll dice
+            Roll initiative
           </button>
           <div class="initiativeResult"></div>
         </div>
         <div class="hidden initiativeRoll--3">
           <div class="player--names player--name--3"></div>
           <button class="rollInitiativeBtn--3 rollInitiativeBtn">
-            Roll dice
+            Roll initiative
           </button>
           <div class="initiativeResult"></div>
         </div>
         <div class="hidden initiativeRoll--4">
           <div class="player--names player--name--4"></div>
           <button class="rollInitiativeBtn--4 rollInitiativeBtn">
-            Roll dice
+            Roll initiative
           </button>
           <div class="initiativeResult"></div>
         </div>
       </div>
+      <button class="doneRollingInit hidden">Continue</button>
     </div>
 
     <form class="options">
@@ -159,7 +161,9 @@
           maxlength="16"
       /></label>
 
-      <button type="submit" id="start-game">Start game</button>
+      <button type="submit" id="start-game">
+        Proceed to Roll for Initiative
+      </button>
       <span class="start-warning warning"
         >You can't leave an input field empty...</span
       >

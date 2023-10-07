@@ -5,10 +5,11 @@ import { smoothFadeIn, createDiceRoll, changeColour } from "./helper.js";
 import { FADE_TIME } from "./config.js";
 
 const startGameBtn = document.querySelector("#start-game");
-const rollInitiativeDiv = document.querySelector(".rollInitiative");
+const rollInitiativeSection = document.querySelector(".rollInitiative");
 const rollInitiativeContainer = document.querySelector(
   ".initiativeRollsContainer"
 );
+const nextBtn = document.querySelector(".doneRollingInit");
 let count = 0;
 
 const sortPlayersArr = (arr) => arr.sort((a, b) => b.initiative - a.initiative);
@@ -20,7 +21,7 @@ startGameBtn.addEventListener("click", (e) => {
   for (let i = 1; i <= +numPlayers.value; i++) {
     if (document.querySelector(`#player--${i}-name`).value == "") return;
   }
-  smoothFadeIn(rollInitiativeDiv, FADE_TIME, "flex");
+  smoothFadeIn(rollInitiativeSection, FADE_TIME, "flex");
 
   // Make that many rolls appear as there are players
   for (let i = 1; i <= +numPlayers.value; i++) {
@@ -53,6 +54,11 @@ rollInitiativeContainer.addEventListener("click", (e) => {
 
     // Style number's colour depending on it's magnitude:
     initiativeDiv.style.color = changeColour(diceRoll);
+
+    // Show the 'next' button when all players are done rolling
+    if (count == +numPlayers.value) {
+      smoothFadeIn(nextBtn, FADE_TIME, "block");
+    }
   }
 
   // Sort the array be descending initiative

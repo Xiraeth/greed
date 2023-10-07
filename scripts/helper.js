@@ -53,7 +53,7 @@ const changeColour = (value) => {
   else if (value >= 20 && value < 40) return "rgb(255, 123, 0)";
   else if (value >= 40 && value < 60) return "rgb(255, 251, 0)";
   else if (value >= 60 && value < 80) return "rgb(60, 255, 0)";
-  else if (value >= 80 && value < 100) "rgb(0, 247, 255)";
+  else if (value >= 80 && value < 100) return "rgb(0, 247, 255)";
   else return "rgb(255, 0, 255)";
 };
 

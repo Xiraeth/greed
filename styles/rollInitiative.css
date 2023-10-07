@@ -21,7 +21,7 @@
 }
 
 .initiativeRollsContainer {
-  height: 500px;
+  height: 400px;
   width: 80%;
   display: flex;
   justify-content: space-evenly;
@@ -68,4 +68,28 @@
 .initiativeResult {
   font-size: 10rem;
   margin-top: 2rem;
+}
+
+.doneRollingInit {
+  opacity: 0;
+  padding: 1rem 3rem;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  margin-top: 3rem;
+  font-family: cartaMagna;
+  border: none;
+  outline: none;
+  color: crimson;
+  background-color: burlywood;
+  cursor: pointer;
+  display: block;
+}
+
+.doneRollingInit:hover {
+  color: burlywood;
+  background: crimson;
+}
+
+.doneRollingInit:active {
+  background: rgb(196, 17, 53);
 }
