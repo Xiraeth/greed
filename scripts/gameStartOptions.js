@@ -113,29 +113,31 @@ startGameBtn.addEventListener("click", (e) => {
 
   // Flash a warning message when an input field is left empty
   for (let i = 1; i <= +numPlayers.value; i++) {
+    let player = {};
     if (document.querySelector(`#player--${i}-name`).value == "") {
       warningMsg = `You can't leave an input field empty...`;
       warningMsgFlash(startGameWarningMsg, warningMsg, FADE_TIME);
       return;
     } else {
-      players.push(document.querySelector(`#player--${i}-name`).value);
+      player.name = document.querySelector(`#player--${i}-name`).value;
+      players.push(player);
     }
   }
+
   smoothFadeOut(nicknamesForm, FADE_TIME);
   smoothFadeOut(arrowBackBtn, FADE_TIME);
 
+  // Change background image
   document.body.style.backgroundImage = "url('images/table.jpg')";
 
   // Remove old event listener
   audioToggleBtn.removeEventListener("click", createToggleMusic);
 
-  // Create new audio element and attach event listener to mute it
+  // Create new audio element and attach event listener to it
   let newAudio = createAudioElement(audio, "audio/in-game.mp3");
   audioToggleBtn.addEventListener("click", function () {
     toggleMusic(newAudio, audioToggleBtn);
   });
-
-  // smoothFadeIn(rollInitiativeDiv, FADE_TIME, "flex");
 });
 
 arrowBackBtn.addEventListener("click", () => {

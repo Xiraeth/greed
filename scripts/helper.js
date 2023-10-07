@@ -44,7 +44,34 @@ const toggleMusic = function (audioEl, btn) {
   btn.classList.toggle("fa-volume-xmark");
 };
 
-const createDiceRoll = () => Math.round(Math.random() * 6);
+const createDiceRoll = () => {
+  let rollString = "";
+  let rollInt = Math.round(Math.random() * 5) + 1;
+  switch (rollInt) {
+    case 1:
+      rollString = "one";
+      break;
+    case 2:
+      rollString = "two";
+      break;
+    case 3:
+      rollString = "three";
+      break;
+    case 4:
+      rollString = "four";
+      break;
+    case 5:
+      rollString = "five";
+      break;
+    case 6:
+      rollString = "six";
+      break;
+    case 0:
+      rollString = "zero";
+      break;
+  }
+  return { rollString, rollInt };
+};
 
 export {
   smoothFadeOut,

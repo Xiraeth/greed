@@ -10,18 +10,22 @@ const rollInitiativeButtons = document.querySelectorAll(".rollInitiativeBtn");
 const rollInitiativeContainer = document.querySelector(
   ".initiativeRollsContainer"
 );
-const rolls = [];
+let count = 0;
 
 startGameBtn.addEventListener("click", (e) => {
   e.preventDefault();
+
   // Fade in the next screen
+  for (let i = 1; i <= +numPlayers.value; i++) {
+    if (document.querySelector(`#player--${i}-name`).value == "") return;
+  }
   smoothFadeIn(rollInitiativeDiv, FADE_TIME, "flex");
 
   // Make that many rolls appear as there are players
-  for (let i = 1; i <= numPlayers.value; i++) {
+  for (let i = 1; i <= +numPlayers.value; i++) {
     let roll = document.querySelector(`.initiativeRoll--${i}`);
     let nameEl = roll.querySelector("div");
-    nameEl.textContent = players[i - 1];
+    nameEl.textContent = players[i - 1].name;
     smoothFadeIn(roll, FADE_TIME, "block");
   }
 });
@@ -30,6 +34,14 @@ rollInitiativeContainer.addEventListener("click", (e) => {
   const btn = e.target.closest("button");
   if (!btn) return;
 
-  const diceRoll = createDiceRoll();
-  console.log(btn);
+  // "rolled" class is there to make sure each button is pressed only once
+  // "count" is there so we can't keep rolling and adding classes to the <i> elements
+
+  const faSolid = btn.nextElementSibling;
+  if (count < +numPlayers.value && !btn.classList.contains("rolled")) {
+    const diceRoll = createDiceRoll().rollString;
+    faSolid.classList.add(`fa-dice-${diceRoll}`);
+    btn.classList.add("rolled");
+    count++;
+  }
 });
