@@ -1,7 +1,7 @@
 "use strict";
 
 import { numPlayers, winCon, players } from "./gameStartOptions.js";
-import { smoothFadeIn, createDiceRoll } from "./helper.js";
+import { smoothFadeIn, createDiceRoll, changeColour } from "./helper.js";
 import { FADE_TIME } from "./config.js";
 
 const startGameBtn = document.querySelector("#start-game");
@@ -10,6 +10,8 @@ const rollInitiativeContainer = document.querySelector(
   ".initiativeRollsContainer"
 );
 let count = 0;
+
+const sortPlayersArr = (arr) => arr.sort((a, b) => b.initiative - a.initiative);
 
 startGameBtn.addEventListener("click", (e) => {
   e.preventDefault();
@@ -34,15 +36,25 @@ rollInitiativeContainer.addEventListener("click", (e) => {
   const btn = e.target.closest("button");
   if (!btn) return;
 
-  const faSolid = btn.nextElementSibling;
+  const initiativeDiv = btn.nextElementSibling;
+
   // "rolled" class is there to make sure each button is pressed only once
   // "count" is there so we can't keep rolling and adding classes to the <i> elements
   if (count < +numPlayers.value && !btn.classList.contains("rolled")) {
-    const diceRoll = createDiceRoll();
-    const playerRolled = btn.classList[0].slice(-1);
-    players[playerRolled - 1].initiative = diceRoll.rollInt;
-    faSolid.classList.add(`fa-dice-${diceRoll.rollString}`);
+    let diceRoll = createDiceRoll();
+
+    // Determine which button was pressed
+    let playerRolledIndex = btn.classList[0].slice(-1) - 1;
+    players[playerRolledIndex].initiative = diceRoll;
+
+    initiativeDiv.textContent = diceRoll;
     btn.classList.add("rolled");
     count++;
+
+    // Style number's colour depending on it's magnitude:
+    initiativeDiv.style.color = changeColour(diceRoll);
   }
+
+  // Sort the array be descending initiative
+  sortPlayersArr(players);
 });

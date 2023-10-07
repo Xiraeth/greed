@@ -29,10 +29,16 @@
 }
 
 .rollInitiativeBtn {
+  padding: 1rem 3rem;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  font-family: cartaMagna;
   border: none;
   outline: none;
   color: crimson;
   background-color: burlywood;
+  cursor: pointer;
+  display: block;
 }
 
 .rollInitiativeBtn:hover {
@@ -51,7 +57,7 @@
 }
 
 /* The names of the players in the container*/
-.initiativeRollsContainer > div > div {
+.player--names {
   font-family: blackChan;
   font-size: 5rem;
   text-align: center;
@@ -59,8 +65,7 @@
 }
 
 /* The dice svg in the container */
-.initiativeRollsContainer > div > i {
+.initiativeResult {
   font-size: 10rem;
-  color: burlywood;
   margin-top: 2rem;
 }

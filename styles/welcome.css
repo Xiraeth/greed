@@ -59,7 +59,7 @@
   font-size: 5rem;
 }
 
-button {
+.welcome button {
   font-family: cartaMagna;
   font-style: italic;
   background-color: crimson;
@@ -74,6 +74,6 @@ button {
   display: block;
 }
 
-button:hover {
+.welcome button:hover {
   background-color: rgb(194, 19, 54);
 }

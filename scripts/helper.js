@@ -45,32 +45,15 @@ const toggleMusic = function (audioEl, btn) {
 };
 
 const createDiceRoll = () => {
-  let rollString = "";
-  let rollInt = Math.round(Math.random() * 5) + 1;
-  switch (rollInt) {
-    case 1:
-      rollString = "one";
-      break;
-    case 2:
-      rollString = "two";
-      break;
-    case 3:
-      rollString = "three";
-      break;
-    case 4:
-      rollString = "four";
-      break;
-    case 5:
-      rollString = "five";
-      break;
-    case 6:
-      rollString = "six";
-      break;
-    case 0:
-      rollString = "zero";
-      break;
-  }
-  return { rollString, rollInt };
+  return Math.round(Math.random() * 100) + 1;
+};
+
+const changeColour = (value) => {
+  if (value < 20) return "red";
+  else if (value >= 20 && value < 40) return "rgb(255, 123, 0)";
+  else if (value >= 40 && value < 60) return "rgb(255, 251, 0)";
+  else if (value >= 60 && value < 80) return "rgb(60, 255, 0)";
+  else return "rgb(0, 247, 255)";
 };
 
 export {
@@ -80,4 +63,5 @@ export {
   createAudioElement,
   toggleMusic,
   createDiceRoll,
+  changeColour,
 };
